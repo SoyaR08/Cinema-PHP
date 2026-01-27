@@ -3,6 +3,7 @@ include_once '../shared/header.php';
 include_once '../shared/Database.php';
 include_once 'content/utility.php';
 
+// Comprueba si se ha pasado un nombre de personaje
 $characterName = isset($_GET['nombre_persona']) ? $_GET['nombre_persona'] : null;
 
 if ($characterName === null) {

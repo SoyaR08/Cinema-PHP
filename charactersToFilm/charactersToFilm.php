@@ -1,6 +1,7 @@
 <?php require_once("../shared/header.php")?>
 <?php require_once("utils.php");
 
+// Obtengo todos los datos necesarios para el formulario
 $films = getAllFilms();
 $characters = getAllCharacters();
 $tasks = getAllTasks();
@@ -18,10 +19,11 @@ $tasks = getAllTasks();
     
 
     <?php 
-    
+        // Compruebo si se ha enviado el formulario
         if (isset($_POST['submit'])) {
             $answer = checkNewCharacter($_POST['film'], $_POST['character'], $_POST['task']);
             
+            // Si el personaje ya está en la película, muestro un mensaje de error
             if ($answer) {
                 echo "<div class=\"alert alert-danger text-center\"> Este personaje ya está en esa película </div>";
             } else {
